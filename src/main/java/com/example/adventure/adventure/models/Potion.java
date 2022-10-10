@@ -16,7 +16,7 @@ public class Potion {
     private int healingPoints;
 
     @ManyToOne
-    @JoinColumn(name="player_id", nullable = false)
+    @JoinColumn(name="player_id")
     @JsonIgnoreProperties({"potions"})
     private Player player;
 

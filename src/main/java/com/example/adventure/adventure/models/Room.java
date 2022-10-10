@@ -16,7 +16,7 @@ public class Room {
 
     @OneToOne
     @JoinColumn(name="npc_id", nullable = false)
-    @JsonIgnoreProperties({"rooms"})
+    @JsonIgnoreProperties({"room"})
     private NPC npc;
 
     public Room (String name, NPC npc){

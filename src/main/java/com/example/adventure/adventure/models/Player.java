@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 // name, healthpoints, inventory (dictionary array list), attack method, change weapon
 @Entity
@@ -26,11 +27,11 @@ public class Player {
 
     @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
     @JsonIgnoreProperties({"player"})
-    private ArrayList<Weapon> weapons;
+    private List<Weapon> weapons;
 
     @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
     @JsonIgnoreProperties({"player"})
-    private ArrayList<Potion> potions;
+    private List<Potion> potions;
 
     public Player(int gold, String name, int healthPoints){
         this.gold = gold;

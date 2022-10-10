@@ -19,7 +19,7 @@ public class Weapon {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="player_id", nullable=false)
+    @JoinColumn(name="player_id")
 
     @JsonIgnoreProperties({"weapons"})
     private Player player;

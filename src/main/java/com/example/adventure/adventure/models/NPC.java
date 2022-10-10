@@ -19,7 +19,7 @@ public class NPC {
     private int attackValue;
 
     @OneToOne
-    @JoinColumn(name="room_id", nullable = false)
+    @JoinColumn(name="room_id")
     @JsonIgnoreProperties({"npc"})
     private Room room;
 
