@@ -1,19 +1,36 @@
 package com.example.adventure.adventure.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 
 // name, healthpoints, inventory (dictionary array list), attack method, change weapon
+@Entity
+@Table(name="players")
 public class Player {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name")
     private String name;
 
+    @Column(name="health_points")
     private int healthPoints;
 
-    private ArrayList<Weapon> weapons;
-    private ArrayList<Potion> potions;
-
+    @Column(name="gold")
     private int gold;
+
+    @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
+    @JsonIgnoreProperties({"player"})
+    private ArrayList<Weapon> weapons;
+
+    @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
+    @JsonIgnoreProperties({"player"})
+    private ArrayList<Potion> potions;
 
     public Player(int gold, String name, int healthPoints){
         this.gold = gold;
@@ -35,6 +52,14 @@ public class Player {
 
     public void setWeapons(ArrayList<Weapon> weapons) {
         this.weapons = weapons;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void removePotion(Potion potion){

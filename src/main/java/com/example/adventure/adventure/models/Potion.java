@@ -1,5 +1,10 @@
 package com.example.adventure.adventure.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="potions")
 public class Potion {
 
     private String name;
