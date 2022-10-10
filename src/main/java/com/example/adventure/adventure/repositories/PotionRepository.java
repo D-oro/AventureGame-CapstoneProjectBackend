@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface potionRepository extends JpaRepository<Potion, Long> {
+public interface PotionRepository extends JpaRepository<Potion, Long> {
 }
