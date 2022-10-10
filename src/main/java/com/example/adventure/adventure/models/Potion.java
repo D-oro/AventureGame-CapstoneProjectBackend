@@ -1,19 +1,36 @@
 package com.example.adventure.adventure.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="potions")
 public class Potion {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name="name")
     private String name;
-
+    @Column(name="healingPoints")
     private int healingPoints;
+
+    @ManyToOne
+    @JoinColumn(name="player_id", nullable = false)
+    @JsonIgnoreProperties({"potions"})
+    private Player player;
 
     public Potion(String name, int healingPoints){
         this.name = name;
         this.healingPoints = healingPoints;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getHealingPoints() {

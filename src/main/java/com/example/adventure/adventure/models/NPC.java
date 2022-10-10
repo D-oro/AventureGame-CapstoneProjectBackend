@@ -1,12 +1,27 @@
 package com.example.adventure.adventure.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="npc")
 public class NPC {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name="name")
     private String name;
-
+    @Column(name="healthPoints")
     private int healthPoints;
 
+    @Column(name="attackValue")
     private int attackValue;
+
+    @OneToOne
+    @JoinColumn(name="room_id", nullable = false)
+    @JsonIgnoreProperties({"npc"})
+    private Room room;
 
     public NPC(String name, int healthPoints, int attackValue){
         this.name = name;
@@ -16,6 +31,14 @@ public class NPC {
 
     public int getAttackValue() {
         return attackValue;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setAttackValue(int attackValue) {
