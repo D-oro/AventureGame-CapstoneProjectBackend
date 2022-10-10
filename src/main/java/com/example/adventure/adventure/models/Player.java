@@ -10,8 +10,8 @@ public class Player {
 
     private int healthPoints;
 
-
-//    private Inventory inventory;
+    private ArrayList<Weapon> weapons;
+    private ArrayList<Potion> potions;
 
     private int gold;
 
@@ -19,7 +19,40 @@ public class Player {
         this.gold = gold;
         this.name = name;
         this.healthPoints = healthPoints;
+        this.weapons = new ArrayList<Weapon>();
+        this.potions = new ArrayList<Potion>();
     }
+
+    //    gets the healing value of the selected (first in array) potion
+    public int getHealingPointsOfFirstPotionInArray(){
+        return potions.get(0).getHealingPoints();
+    }
+
+    //    gets the attack value of the selected (first in array) weapon
+    public int getAttackPointsOfFirstWeaponInArray(){
+        return weapons.get(0).getAttackPoints();
+    }
+
+    public void setWeapons(ArrayList<Weapon> weapons) {
+        this.weapons = weapons;
+    }
+
+    public void removePotion(Potion potion){
+        potions.remove(potion);
+    }
+
+    public void addPotion(Potion potion){
+        potions.add(potion);
+    }
+
+    public void addWeapon(Weapon weapon){
+        weapons.add(weapon);
+    }
+
+    public void removeWeapon(Weapon weapon){
+        weapons.remove(weapon);
+    }
+
 
     public int getGold() {
         return gold;
