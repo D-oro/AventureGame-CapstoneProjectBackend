@@ -121,7 +121,13 @@ public class Player {
         this.name = name;
     }
 
+    public int takeDamage(NPC npc) {
+       return this.healthPoints -= npc.getAttackValue();
+    }
+
     public Player(){
     }
+
+
 
 }

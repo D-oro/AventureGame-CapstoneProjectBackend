@@ -1,5 +1,6 @@
 package com.example.adventure.adventure;
 
+import com.example.adventure.adventure.models.NPC;
 import com.example.adventure.adventure.models.Player;
 import com.example.adventure.adventure.models.Potion;
 import com.example.adventure.adventure.models.Weapon;
@@ -16,11 +17,14 @@ public class PlayerTest {
 
     Potion potion1;
 
+    NPC npc1;
+
     @BeforeEach
     public void before() {
         player = new Player(20, "Aimee", 100);
         weapon1 = new Weapon(15, "Axe of Death");
         potion1 = new Potion("Potion Of Health", 20);
+        npc1 = new NPC("Crazy Chicken", 75, 10);
     }
 
     @Test
@@ -57,6 +61,12 @@ public class PlayerTest {
     public void canGetPotionHealingAmount() {
         player.addPotion(potion1);
         assertEquals(20, player.getHealingPointsOfFirstPotionInArray());
+    }
+
+    @Test
+    public void canTakeDamageFromNpc() {
+        player.takeDamage(npc1);
+        assertEquals(90, player.getHealthPoints());
     }
 
 
