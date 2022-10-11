@@ -41,6 +41,23 @@ public class Player {
         this.potions = new ArrayList<Potion>();
     }
 
+    public int getWeapons() {
+        return weapons.size();
+    }
+
+    public void setWeapons(List<Weapon> weapons) {
+        this.weapons = weapons;
+    }
+
+
+    public int getPotions() {
+        return potions.size();
+    }
+
+    public void setPotions(List<Potion> potions) {
+        this.potions = potions;
+    }
+
     //    gets the healing value of the selected (first in array) potion
     public int getHealingPointsOfFirstPotionInArray(){
         return potions.get(0).getHealingPoints();
