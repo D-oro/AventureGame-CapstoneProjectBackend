@@ -59,14 +59,14 @@ public class Player {
     }
 
     //    gets the healing value of the selected (first in array) potion
-    public int getHealingPointsOfFirstPotionInArray(){
-        return potions.get(0).getHealingPoints();
-    }
-
-    //    gets the attack value of the selected (first in array) weapon
-    public int getAttackPointsOfFirstWeaponInArray(){
-        return weapons.get(0).getAttackPoints();
-    }
+//    public int getHealingPointsOfFirstPotionInArray(){
+//        return potions.get(0).getHealingPoints();
+//    }
+//
+//    //    gets the attack value of the selected (first in array) weapon
+//    public int getAttackPointsOfFirstWeaponInArray(){
+//        return weapons.get(0).getAttackPoints();
+//    }
 
     public void setWeapons(ArrayList<Weapon> weapons) {
         this.weapons = weapons;

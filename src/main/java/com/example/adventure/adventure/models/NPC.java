@@ -61,9 +61,9 @@ public class NPC {
         this.name = name;
     }
 
-    public int takeDamage(Player player) {
-        return this.healthPoints -= player.getAttackPointsOfFirstWeaponInArray();
-    }
+//    public int takeDamage(Player player) {
+//        return this.healthPoints -= player.getAttackPointsOfFirstWeaponInArray();
+//    }
 
     public NPC(){
     }
