@@ -69,6 +69,14 @@ public class PlayerTest {
         assertEquals(90, player.getHealthPoints());
     }
 
+    @Test
+    public void canHealUsingPotion() {
+        player.takeDamage(npc1);
+        player.takeDamage(npc1);
+        player.healPlayer(potion1);
+        assertEquals(100, player.getHealthPoints());
+    }
+
 
 
 

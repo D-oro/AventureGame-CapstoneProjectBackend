@@ -125,6 +125,10 @@ public class Player {
        return this.healthPoints -= npc.getAttackValue();
     }
 
+    public int healPlayer(Potion potion) {
+        return this.healthPoints += potion.getHealingPoints();
+    }
+
     public Player(){
     }
 
