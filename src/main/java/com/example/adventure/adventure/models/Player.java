@@ -44,6 +44,14 @@ public class Player {
         this.startHealthPoints = startHealthPoints;
     }
 
+    public int getStartHealthPoints() {
+        return startHealthPoints;
+    }
+
+    public void setStartHealthPoints(int startHealthPoints) {
+        this.startHealthPoints = startHealthPoints;
+    }
+
     public int getWeapons() {
         return weapons.size();
     }

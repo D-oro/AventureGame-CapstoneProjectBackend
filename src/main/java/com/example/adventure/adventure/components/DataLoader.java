@@ -37,10 +37,10 @@ public class DataLoader implements ApplicationRunner {
         Player player1 = new Player(500, "Johnny", 100, 100);
         playerRepository.save(player1);
 
-        NPC npc1 = new NPC("The Protector", 50, 10, 100);
+        NPC npc1 = new NPC("The Protector", 50, 10, 50);
         npcRepository.save(npc1);
 
-        NPC npc2 = new NPC("Elving", 80, 10, 100);
+        NPC npc2 = new NPC("Elving", 80, 10, 80);
         npcRepository.save(npc2);
 
         NPC npc3 = new NPC("Yer Maw", 100, 60, 100);

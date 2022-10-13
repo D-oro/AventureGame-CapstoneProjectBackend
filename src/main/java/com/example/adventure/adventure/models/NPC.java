@@ -32,6 +32,22 @@ public class NPC {
         this.startHealthPoints = startHealthPoints;
     }
 
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public int getStartHealthPoints() {
+        return startHealthPoints;
+    }
+
+    public void setStartHealthPoints(int startHealthPoints) {
+        this.startHealthPoints = startHealthPoints;
+    }
+
     public int getAttackValue() {
         return attackValue;
     }

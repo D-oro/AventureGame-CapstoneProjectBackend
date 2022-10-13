@@ -25,6 +25,14 @@ public class Potion {
         this.healingPoints = healingPoints;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
     public Long getId() {
         return id;
     }
