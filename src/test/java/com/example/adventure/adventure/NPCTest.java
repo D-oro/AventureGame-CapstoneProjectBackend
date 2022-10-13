@@ -20,8 +20,9 @@ public class NPCTest {
     public void before() {
 
         npc = new NPC("Vampire Lord", 80, 10, 100);
-        player = new Player(20, "Aimee", 100, 100);
         weapon1 = new Weapon(15, "Axe of Death");
+        player = new Player(20, "Aimee", 100, 100, weapon1);
+
     }
 
     @Test
@@ -33,9 +34,5 @@ public class NPCTest {
     @Test
     public void npcHasAttackValue() {assertEquals(10, npc.getAttackValue());}
 
-    @Test
-    public void takeDamageFromPlayer() {
-        player.addWeapon(weapon1);
-        npc.takeDamage(player);
-        assertEquals(65, npc.getHealthPoints());}
+
 }

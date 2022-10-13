@@ -21,8 +21,8 @@ public class PlayerTest {
 
     @BeforeEach
     public void before() {
-        player = new Player(20, "Aimee", 100, 100);
         weapon1 = new Weapon(15, "Axe of Death");
+        player = new Player(20, "Aimee", 100, 100, weapon1);
         potion1 = new Potion("Potion Of Health", 20);
         npc1 = new NPC("Crazy Chicken", 75, 10, 100);
     }
@@ -35,15 +35,6 @@ public class PlayerTest {
 
     @Test
     public void playerHasHealthPoints() {assertEquals(100, player.getHealthPoints());}
-
-    @Test
-    public void weaponStartsEmpty() {assertEquals(0, player.getWeapons());}
-
-    @Test
-    public void canAddToWeapons() {
-        player.addWeapon(weapon1);
-        assertEquals(1, player.getWeapons());
-    }
 
     @Test
     public void canAddPotion() {

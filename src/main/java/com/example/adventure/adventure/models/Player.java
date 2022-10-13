@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// name, healthpoints, inventory (dictionary array list), attack method, change weapon
+// name, healthPoints, inventory (dictionary array list), attack method, change weapon
 @Entity
 @Table(name="players")
 public class Player {
@@ -29,19 +29,21 @@ public class Player {
 
     @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
     @JsonIgnoreProperties({"player"})
-    private List<Weapon> weapons;
+    private Weapon weapon;
 
     @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
     @JsonIgnoreProperties({"player"})
     private List<Potion> potions;
 
-    public Player(int gold, String name, int healthPoints, int startHealthPoints){
+
+
+    public Player(int gold, String name, int healthPoints, int startHealthPoints, Weapon weapon){
         this.gold = gold;
         this.name = name;
         this.healthPoints = healthPoints;
-        this.weapons = new ArrayList<Weapon>();
         this.potions = new ArrayList<Potion>();
         this.startHealthPoints = startHealthPoints;
+        this.weapon = weapon;
     }
 
     public int getStartHealthPoints() {
@@ -52,13 +54,7 @@ public class Player {
         this.startHealthPoints = startHealthPoints;
     }
 
-    public int getWeapons() {
-        return weapons.size();
-    }
 
-    public void setWeapons(List<Weapon> weapons) {
-        this.weapons = weapons;
-    }
 
 
     public int getPotions() {
@@ -67,20 +63,6 @@ public class Player {
 
     public void setPotions(List<Potion> potions) {
         this.potions = potions;
-    }
-
-//        gets the healing value of the selected (first in array) potion
-    public int getHealingPointsOfFirstPotionInArray(){
-        return potions.get(0).getHealingPoints();
-    }
-
-    //    gets the attack value of the selected (first in array) weapon
-    public int getAttackPointsOfFirstWeaponInArray(){
-        return weapons.get(0).getAttackPoints();
-    }
-
-    public void setWeapons(ArrayList<Weapon> weapons) {
-        this.weapons = weapons;
     }
 
     public Long getId() {
@@ -98,15 +80,6 @@ public class Player {
     public void addPotion(Potion potion){
         potions.add(potion);
     }
-
-    public void addWeapon(Weapon weapon){
-        weapons.add(weapon);
-    }
-
-    public void removeWeapon(Weapon weapon){
-        weapons.remove(weapon);
-    }
-
 
     public int getGold() {
         return gold;
@@ -140,6 +113,14 @@ public class Player {
     public void healPlayer(Potion potion) {
 
         this.healthPoints += potion.getHealingPoints();
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 
     public Player(){

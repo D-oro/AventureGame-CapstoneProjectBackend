@@ -34,7 +34,26 @@ public class DataLoader implements ApplicationRunner {
 
 
     public void run(ApplicationArguments args) {
-        Player player1 = new Player(500, "Johnny", 100, 100);
+
+        Weapon weapon1 = new Weapon(15, "sword");
+        weaponRepository.save(weapon1);
+
+        Weapon weapon2 = new Weapon(25, "Axe");
+        weaponRepository.save(weapon2);
+
+        Weapon weapon3 = new Weapon(30, "Flail");
+        weaponRepository.save(weapon3);
+
+        Potion potion1 = new Potion("Love Potion", 50);
+        potionRepository.save(potion1);
+
+        Potion potion2 = new Potion("Risky potion", -60);
+        potionRepository.save(potion2);
+
+        Potion potion3 = new Potion("Risky potion", 35);
+        potionRepository.save(potion3);
+
+        Player player1 = new Player(500, "Johnny", 100, 100, weapon1);
         playerRepository.save(player1);
 
         NPC npc1 = new NPC("The Protector", 50, 10, 50);
@@ -46,15 +65,6 @@ public class DataLoader implements ApplicationRunner {
         NPC npc3 = new NPC("Yer Maw", 100, 60, 100);
         npcRepository.save(npc3);
 
-        Weapon weapon1 = new Weapon(15, "sword");
-        weaponRepository.save(weapon1);
-
-        Weapon weapon2 = new Weapon(25, "Axe");
-        weaponRepository.save(weapon2);
-
-        Weapon weapon3 = new Weapon(30, "Flail");
-        weaponRepository.save(weapon3);
-
         Room room1 = new Room("Battle room", npc1);
         roomRepository.save(room1);
 
@@ -64,13 +74,6 @@ public class DataLoader implements ApplicationRunner {
         Room room3 = new Room("Boss room", npc2);
         roomRepository.save(room3);
 
-        Potion potion1 = new Potion("Love Potion", 50);
-        potionRepository.save(potion1);
 
-        Potion potion2 = new Potion("Risky potion", -60);
-        potionRepository.save(potion2);
-
-        Potion potion3 = new Potion("Risky potion", 35);
-        potionRepository.save(potion3);
     }
 }

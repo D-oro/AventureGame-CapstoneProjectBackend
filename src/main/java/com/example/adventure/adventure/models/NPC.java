@@ -80,9 +80,10 @@ public class NPC {
         this.name = name;
     }
 
-    public void takeDamage(Player player) {
-        this.healthPoints -= player.getAttackPointsOfFirstWeaponInArray();
-    }
+//    public void takeDamage(Player player) {
+//
+//        this.healthPoints -= player.getAttackPointsOfFirstWeaponInArray();
+//    }
 
     public NPC(){
     }
