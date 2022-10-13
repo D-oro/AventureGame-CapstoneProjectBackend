@@ -24,6 +24,8 @@ public class Player {
 
     @Column(name="gold")
     private int gold;
+    @Column(name="startHealthPoints")
+    private int startHealthPoints;
 
     @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
     @JsonIgnoreProperties({"player"})
@@ -33,12 +35,13 @@ public class Player {
     @JsonIgnoreProperties({"player"})
     private List<Potion> potions;
 
-    public Player(int gold, String name, int healthPoints){
+    public Player(int gold, String name, int healthPoints, int startHealthPoints){
         this.gold = gold;
         this.name = name;
         this.healthPoints = healthPoints;
         this.weapons = new ArrayList<Weapon>();
         this.potions = new ArrayList<Potion>();
+        this.startHealthPoints = startHealthPoints;
     }
 
     public int getWeapons() {

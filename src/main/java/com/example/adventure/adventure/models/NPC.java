@@ -17,16 +17,19 @@ public class NPC {
 
     @Column(name="attackValue")
     private int attackValue;
+    @Column(name="StartHealthPoints")
+    private int startHealthPoints;
 
     @OneToOne
     @JoinColumn(name="room_id")
     @JsonIgnoreProperties({"npc"})
     private Room room;
 
-    public NPC(String name, int healthPoints, int attackValue){
+    public NPC(String name, int healthPoints, int attackValue, int startHealthPoints){
         this.name = name;
         this.healthPoints = healthPoints;
         this.attackValue = attackValue;
+        this.startHealthPoints = startHealthPoints;
     }
 
     public int getAttackValue() {

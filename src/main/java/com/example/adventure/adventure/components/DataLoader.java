@@ -34,16 +34,16 @@ public class DataLoader implements ApplicationRunner {
 
 
     public void run(ApplicationArguments args) {
-        Player player1 = new Player(500, "Johnny", 100);
+        Player player1 = new Player(500, "Johnny", 100, 100);
         playerRepository.save(player1);
 
-        NPC npc1 = new NPC("The Protector", 50, 10);
+        NPC npc1 = new NPC("The Protector", 50, 10, 100);
         npcRepository.save(npc1);
 
-        NPC npc2 = new NPC("Elving", 80, 10);
+        NPC npc2 = new NPC("Elving", 80, 10, 100);
         npcRepository.save(npc2);
 
-        NPC npc3 = new NPC("Yer Maw", 100, 60);
+        NPC npc3 = new NPC("Yer Maw", 100, 60, 100);
         npcRepository.save(npc3);
 
         Weapon weapon1 = new Weapon(15, "sword");
