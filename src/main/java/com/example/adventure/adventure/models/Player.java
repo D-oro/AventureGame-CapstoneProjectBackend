@@ -27,7 +27,8 @@ public class Player {
     @Column(name="startHealthPoints")
     private int startHealthPoints;
 
-    @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
+    @OneToOne
+    @JoinColumn(name="weapon_id")
     @JsonIgnoreProperties({"player"})
     private Weapon weapon;
 
@@ -121,6 +122,10 @@ public class Player {
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+    }
+
+    public int getWeaponAttackPoints() {
+        return weapon.getAttackPoints();
     }
 
     public Player(){
