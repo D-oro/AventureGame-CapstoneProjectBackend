@@ -36,6 +36,6 @@ public class NPCTest {
     @Test
     public void takeDamageFromPlayer() {
         player.addWeapon(weapon1);
-//        npc.takeDamage(player);
+        npc.takeDamage(player);
         assertEquals(65, npc.getHealthPoints());}
 }
