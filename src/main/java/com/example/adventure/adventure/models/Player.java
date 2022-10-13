@@ -29,11 +29,11 @@ public class Player {
 
     @OneToOne
     @JoinColumn(name="weapon_id")
-    @JsonIgnoreProperties({"player"})
+    @JsonIgnoreProperties(value={"player"},allowSetters = true)
     private Weapon weapon;
 
     @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
-    @JsonIgnoreProperties({"player"})
+    @JsonIgnoreProperties(value={"player"},allowSetters = true)
     private List<Potion> potions;
 
 
@@ -58,8 +58,8 @@ public class Player {
 
 
 
-    public int getPotions() {
-        return potions.size();
+    public List<Potion> getPotions() {
+        return potions;
     }
 
     public void setPotions(List<Potion> potions) {
