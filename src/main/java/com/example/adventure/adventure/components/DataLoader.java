@@ -28,6 +28,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     RoomRepository roomRepository;
 
+    @Autowired
+    RiddlesRepository riddlesRepository;
+
     public DataLoader() {
 
     }
@@ -56,14 +59,17 @@ public class DataLoader implements ApplicationRunner {
         Player player1 = new Player(500, "Johnny", 100, 100, weapon1);
         playerRepository.save(player1);
 
-        NPC npc1 = new NPC("The Protector", 50, 10, 50);
+        NPC npc1 = new NPC("The Punisher", 50, 10, 50);
         npcRepository.save(npc1);
 
-        NPC npc2 = new NPC("Elving", 80, 10, 80);
+        NPC npc2 = new NPC("The Orc of Tomorrow", 80, 10, 80);
         npcRepository.save(npc2);
 
-        NPC npc3 = new NPC("Yer Maw", 100, 60, 100);
+        NPC npc3 = new NPC("Trolling Me, Trolling You", 100, 30, 100);
         npcRepository.save(npc3);
+
+        NPC npc4 = new NPC("For chicken in chickens", 200, 60, 200);
+        npcRepository.save(npc4);
 
         Room room1 = new Room("Battle room", npc1);
         roomRepository.save(room1);
@@ -74,6 +80,17 @@ public class DataLoader implements ApplicationRunner {
         Room room3 = new Room("Boss room", npc2);
         roomRepository.save(room3);
 
+        Riddles riddle1 = new Riddles("What has to be broken before it can be used?", "An Egg", "A pen", "A problem", "A house");
+        riddlesRepository.save(riddle1);
+
+        Riddles riddle2 = new Riddles("I'm tall when i'm young, and short when i'm old... What am I?", "A candle", "A child", "A dog", "An apricot");
+        riddlesRepository.save(riddle2);
+
+        Riddles riddle3 = new Riddles("If two's a company and three's a crowd, what is 4 and 5?", "Nine", "Fourteens a mess", "4 add 5", "There isn't a phrase for 4 and 5");
+        riddlesRepository.save(riddle3);
+
+        Riddles riddle4 = new Riddles("The more you code, the more of me there is. I may be gone for now, but I'll never be gone forever. What am I?", "A bug", "A consoleLog", "An Error Message", "A Unit Test");
+        riddlesRepository.save(riddle4);
 
     }
 }
