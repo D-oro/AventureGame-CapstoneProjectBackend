@@ -1,6 +1,5 @@
 package com.example.adventure.adventure.Controllers;
 
-import com.example.adventure.adventure.models.Potion;
 import com.example.adventure.adventure.models.Riddles;
 import com.example.adventure.adventure.repositories.RiddlesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
 public class RiddlesController {
 
     @Autowired
