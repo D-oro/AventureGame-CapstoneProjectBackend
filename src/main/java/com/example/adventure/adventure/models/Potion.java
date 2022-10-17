@@ -20,9 +20,10 @@ public class Potion {
     @JsonIgnoreProperties({"potions"})
     private Player player;
 
-    public Potion(String name, int healingPoints){
+    public Potion(String name, int healingPoints, Player player){
         this.name = name;
         this.healingPoints = healingPoints;
+        this.player = player;
     }
 
     public Player getPlayer() {

@@ -47,17 +47,17 @@ public class DataLoader implements ApplicationRunner {
         Weapon weapon3 = new Weapon(15, "Flail");
         weaponRepository.save(weapon3);
 
-        Potion potion1 = new Potion("Love Potion", 50);
-        potionRepository.save(potion1);
-
-        Potion potion2 = new Potion("Risky potion", -60);
-        potionRepository.save(potion2);
-
-        Potion potion3 = new Potion("Risky potion", 35);
-        potionRepository.save(potion3);
-
         Player player1 = new Player(500, "Johnny", 150, 150, weapon1);
         playerRepository.save(player1);
+
+        Potion potion1 = new Potion("Love Potion", 50, player1);
+        potionRepository.save(potion1);
+
+        Potion potion2 = new Potion("Risky potion", -60, player1);
+        potionRepository.save(potion2);
+
+        Potion potion3 = new Potion("Risky potion", 35, player1);
+        potionRepository.save(potion3);
 
         NPC npc1 = new NPC("The Punisher", 200, 10, 200);
         npcRepository.save(npc1);

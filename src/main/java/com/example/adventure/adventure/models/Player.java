@@ -33,9 +33,8 @@ public class Player {
     private Weapon weapon;
 
     @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
-    @JsonIgnoreProperties(value={"player"},allowSetters = true)
+    @JsonIgnoreProperties(value={"player"}, allowSetters = true)
     private List<Potion> potions;
-
 
 
     public Player(int gold, String name, int healthPoints, int startHealthPoints, Weapon weapon){
@@ -47,23 +46,20 @@ public class Player {
         this.weapon = weapon;
     }
 
-    public int getStartHealthPoints() {
-        return startHealthPoints;
-    }
-
-    public void setStartHealthPoints(int startHealthPoints) {
-        this.startHealthPoints = startHealthPoints;
-    }
-
-
-
-
     public List<Potion> getPotions() {
         return potions;
     }
 
     public void setPotions(List<Potion> potions) {
         this.potions = potions;
+    }
+
+    public int getStartHealthPoints() {
+        return startHealthPoints;
+    }
+
+    public void setStartHealthPoints(int startHealthPoints) {
+        this.startHealthPoints = startHealthPoints;
     }
 
     public Long getId() {
@@ -130,8 +126,6 @@ public class Player {
 
     public Player(){
     }
-
-
 
 }
 
