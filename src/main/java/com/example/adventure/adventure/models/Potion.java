@@ -15,12 +15,23 @@ public class Potion {
     @Column(name="healingPoints")
     private int healingPoints;
 
+    @ManyToOne
+    @JoinColumn(name="player_id")
+    @JsonIgnoreProperties({"potions"})
+    private Player player;
 
     public Potion(String name, int healingPoints){
         this.name = name;
         this.healingPoints = healingPoints;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
     public Long getId() {
         return id;
@@ -51,3 +62,10 @@ public class Potion {
     }
 
 }
+
+
+
+
+
+
+

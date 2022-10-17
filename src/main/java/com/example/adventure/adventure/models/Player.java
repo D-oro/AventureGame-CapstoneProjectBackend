@@ -32,7 +32,9 @@ public class Player {
     @JsonIgnoreProperties(value={"player"},allowSetters = true)
     private Weapon weapon;
 
-
+    @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
+    @JsonIgnoreProperties(value={"player"},allowSetters = true)
+    private List<Potion> potions;
 
 
 
@@ -40,6 +42,7 @@ public class Player {
         this.gold = gold;
         this.name = name;
         this.healthPoints = healthPoints;
+        this.potions = new ArrayList<Potion>();
         this.startHealthPoints = startHealthPoints;
         this.weapon = weapon;
     }
@@ -55,7 +58,13 @@ public class Player {
 
 
 
+    public List<Potion> getPotions() {
+        return potions;
+    }
 
+    public void setPotions(List<Potion> potions) {
+        this.potions = potions;
+    }
 
     public Long getId() {
         return id;
@@ -65,6 +74,13 @@ public class Player {
         this.id = id;
     }
 
+    public void removePotion(Potion potion){
+        potions.remove(potion);
+    }
+
+    public void addPotion(Potion potion){
+        potions.add(potion);
+    }
 
     public int getGold() {
         return gold;
@@ -118,3 +134,23 @@ public class Player {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
