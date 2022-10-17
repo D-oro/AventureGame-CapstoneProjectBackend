@@ -53,7 +53,7 @@ public class DataLoader implements ApplicationRunner {
         Potion potion1 = new Potion("Love Potion", 50, player1);
         potionRepository.save(potion1);
 
-        Potion potion2 = new Potion("Risky potion", 35, player1);
+        Potion potion2 = new Potion("Yellow potion", 35, player1);
         potionRepository.save(potion2);
 
 //        Potion potion3 = new Potion("Risky potion", -60, player1);
