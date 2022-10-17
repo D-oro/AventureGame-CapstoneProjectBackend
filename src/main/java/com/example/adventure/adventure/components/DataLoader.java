@@ -41,10 +41,10 @@ public class DataLoader implements ApplicationRunner {
         Weapon weapon1 = new Weapon(15, "sword");
         weaponRepository.save(weapon1);
 
-        Weapon weapon2 = new Weapon(25, "Axe");
+        Weapon weapon2 = new Weapon(15, "Axe");
         weaponRepository.save(weapon2);
 
-        Weapon weapon3 = new Weapon(30, "Flail");
+        Weapon weapon3 = new Weapon(15, "Flail");
         weaponRepository.save(weapon3);
 
         Potion potion1 = new Potion("Love Potion", 50);
@@ -56,19 +56,19 @@ public class DataLoader implements ApplicationRunner {
         Potion potion3 = new Potion("Risky potion", 35);
         potionRepository.save(potion3);
 
-        Player player1 = new Player(500, "Johnny", 100, 100, weapon1);
+        Player player1 = new Player(500, "Johnny", 150, 150, weapon1);
         playerRepository.save(player1);
 
-        NPC npc1 = new NPC("The Punisher", 50, 10, 50);
+        NPC npc1 = new NPC("The Punisher", 200, 10, 200);
         npcRepository.save(npc1);
 
-        NPC npc2 = new NPC("The Orc of Tomorrow", 80, 10, 80);
+        NPC npc2 = new NPC("The Orc of Tomorrow", 250, 11, 250);
         npcRepository.save(npc2);
 
-        NPC npc3 = new NPC("Trolling Me, Trolling You", 100, 30, 100);
+        NPC npc3 = new NPC("Trolling Me, Trolling You", 260, 12, 260);
         npcRepository.save(npc3);
 
-        NPC npc4 = new NPC("For chicken in chickens", 200, 60, 200);
+        NPC npc4 = new NPC("For chicken in chickens", 300, 13, 300);
         npcRepository.save(npc4);
 
         Room room1 = new Room("Battle room", npc1);
