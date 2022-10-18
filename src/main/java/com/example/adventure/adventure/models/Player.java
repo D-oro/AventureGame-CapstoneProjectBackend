@@ -16,6 +16,9 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="level")
+    private int level;
+
     @Column(name = "name")
     private String name;
 
@@ -37,13 +40,22 @@ public class Player {
     private List<Potion> potions;
 
 
-    public Player(int gold, String name, int healthPoints, int startHealthPoints, Weapon weapon){
+    public Player(int level, int gold, String name, int healthPoints, int startHealthPoints, Weapon weapon){
+        this.level = level;
         this.gold = gold;
         this.name = name;
         this.healthPoints = healthPoints;
         this.potions = new ArrayList<Potion>();
         this.startHealthPoints = startHealthPoints;
         this.weapon = weapon;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public List<Potion> getPotions() {

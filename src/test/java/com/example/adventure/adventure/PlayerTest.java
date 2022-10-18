@@ -22,8 +22,8 @@ public class PlayerTest {
     @BeforeEach
     public void before() {
         weapon1 = new Weapon(15, "Axe of Death");
-        player = new Player(20, "Aimee", 100, 100, weapon1);
-        potion1 = new Potion("Potion Of Health", 20);
+        player = new Player(1, 20, "Aimee", 100, 100, weapon1);
+        potion1 = new Potion("Potion Of Health", 20, player);
         npc1 = new NPC("Crazy Chicken", 75, 10, 100);
     }
 
