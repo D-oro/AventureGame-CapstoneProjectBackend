@@ -68,7 +68,7 @@ public class DataLoader implements ApplicationRunner {
         GreenPotion greenPotion = new GreenPotion("Herbal Potion", 45);
         greenPotionRepository.save(greenPotion);
 
-        Player player1 = new Player(500, "Johnny", 75, 75, weapon1, redPotion, yellowPotion, bluePotion, greenPotion);
+        Player player1 = new Player(1, 500, "Johnny", 75, 75, weapon1, redPotion, yellowPotion, bluePotion, greenPotion);
         playerRepository.save(player1);
 
         NPC npc1 = new NPC("The Punisher", 100, 10, 100);

@@ -13,6 +13,9 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="level")
+    private int level;
+
     @Column(name = "name")
     private String name;
 
@@ -49,7 +52,8 @@ public class Player {
     @JsonIgnoreProperties(value={"player"},allowSetters = true)
     private GreenPotion greenPotion;
 
-    public Player(int gold, String name, int healthPoints, int startHealthPoints, Weapon weapon, RedPotion redPotion, YellowPotion yellowPotion, BluePotion bluePotion, GreenPotion greenPotion){
+    public Player(int level, int gold, String name, int healthPoints, int startHealthPoints, Weapon weapon, RedPotion redPotion, YellowPotion yellowPotion, BluePotion bluePotion, GreenPotion greenPotion){
+        this.level = level;
         this.gold = gold;
         this.name = name;
         this.healthPoints = healthPoints;
@@ -59,6 +63,14 @@ public class Player {
         this.yellowPotion = yellowPotion;
         this.greenPotion = greenPotion;
         this.bluePotion = bluePotion;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public GreenPotion getGreenPotion() {
