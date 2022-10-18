@@ -38,16 +38,16 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        Weapon weapon1 = new Weapon(15, "sword");
+        Weapon weapon1 = new Weapon(50, "sword");
         weaponRepository.save(weapon1);
 
-        Weapon weapon2 = new Weapon(15, "Axe");
+        Weapon weapon2 = new Weapon(60, "Axe");
         weaponRepository.save(weapon2);
 
-        Weapon weapon3 = new Weapon(15, "Flail");
+        Weapon weapon3 = new Weapon(70, "Flail");
         weaponRepository.save(weapon3);
 
-        Player player1 = new Player(500, "Johnny", 150, 150, weapon1);
+        Player player1 = new Player(1, 500, "Johnny", 150, 150, weapon1);
         playerRepository.save(player1);
 
         Potion potion1 = new Potion("Love Potion", 50, player1);
