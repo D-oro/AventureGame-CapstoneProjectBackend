@@ -23,11 +23,11 @@ public class PlayerTest {
     @BeforeEach
     public void before() {
         weapon1 = new Weapon(15, "Axe of Death");
-        player = new Player(20, "Aimee", 100, 100, weapon1, redPotion, yellowPotion, bluePotion, greenPotion);
         redPotion = new RedPotion("Love Potion", 25);
         yellowPotion = new YellowPotion("Sunshine Potion", 35);
         bluePotion = new BluePotion ("Sky Potion", 45);
         greenPotion = new GreenPotion ("Herbal Potion", 55);
+        player = new Player(1, 20, "Aimee", 100, 100, weapon1, redPotion, yellowPotion, bluePotion, greenPotion);
         npc1 = new NPC("Crazy Chicken", 75, 10, 100);
     }
 

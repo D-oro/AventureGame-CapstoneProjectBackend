@@ -1,5 +1,8 @@
 package com.example.adventure.adventure;
-
+import com.example.adventure.adventure.models.RedPotion;
+import com.example.adventure.adventure.models.YellowPotion;
+import com.example.adventure.adventure.models.BluePotion;
+import com.example.adventure.adventure.models.GreenPotion;
 import com.example.adventure.adventure.models.NPC;
 import com.example.adventure.adventure.models.Player;
 import com.example.adventure.adventure.models.Weapon;
@@ -16,17 +19,20 @@ public class NPCTest {
 
     Weapon weapon1;
 
-    Potion redPotion;
-    Potion yellowPotion;
-    Potion bluePotion;
-    Potion greenPotion;
+    RedPotion redPotion;
+    YellowPotion yellowPotion;
+    BluePotion bluePotion;
+    GreenPotion greenPotion;
 
     @BeforeEach
     public void before() {
-
+        redPotion = new RedPotion("Love Potion", 25);
+        yellowPotion = new YellowPotion("Sunshine Potion", 35);
+        bluePotion = new BluePotion("Sky Potion", 45);
+        greenPotion = new GreenPotion("Herbal Potion", 55);
         npc = new NPC("Vampire Lord", 80, 10, 100);
         weapon1 = new Weapon(15, "Axe of Death");
-        player = new Player(20, "Aimee", 100, 100, weapon1, redPotion, yellowPotion, bluePotion, greenPotion);
+        player = new Player(1, 20, "Aimee", 100, 100, weapon1, redPotion, yellowPotion, bluePotion, greenPotion);
 
     }
 
