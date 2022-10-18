@@ -21,7 +21,7 @@ public class NPCTest {
 
         npc = new NPC("Vampire Lord", 80, 10, 100);
         weapon1 = new Weapon(15, "Axe of Death");
-        player = new Player(20, "Aimee", 100, 100, weapon1);
+        player = new Player(1, 20, "Aimee", 100, 100, weapon1);
 
     }
 
