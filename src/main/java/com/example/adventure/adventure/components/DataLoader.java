@@ -23,7 +23,16 @@ public class DataLoader implements ApplicationRunner {
     WeaponRepository weaponRepository;
 
     @Autowired
-    PotionRepository potionRepository;
+    RedPotionRepository redPotionRepository;
+
+    @Autowired
+    YellowPotionRepository yellowPotionRepository;
+
+    @Autowired
+    BluePotionRepository bluePotionRepository;
+
+    @Autowired
+    GreenPotionRepository greenPotionRepository;
 
     @Autowired
     RoomRepository roomRepository;
@@ -47,19 +56,22 @@ public class DataLoader implements ApplicationRunner {
         Weapon weapon3 = new Weapon(70, "Flail");
         weaponRepository.save(weapon3);
 
-        Player player1 = new Player(1, 500, "Johnny", 150, 150, weapon1);
+        RedPotion redPotion = new RedPotion("Love Potion", 15);
+        redPotionRepository.save(redPotion);
+
+        YellowPotion yellowPotion = new YellowPotion("Sunshine Potion", 25);
+        yellowPotionRepository.save(yellowPotion);
+
+        BluePotion bluePotion = new BluePotion("Sky Potion", 35);
+        bluePotionRepository.save(bluePotion);
+
+        GreenPotion greenPotion = new GreenPotion("Herbal Potion", 45);
+        greenPotionRepository.save(greenPotion);
+
+        Player player1 = new Player(500, "Johnny", 75, 75, weapon1, redPotion, yellowPotion, bluePotion, greenPotion);
         playerRepository.save(player1);
 
-        Potion potion1 = new Potion("Love Potion", 50, player1);
-        potionRepository.save(potion1);
-
-        Potion potion2 = new Potion("Yellow Potion", 35, player1);
-        potionRepository.save(potion2);
-
-//        Potion potion3 = new Potion("Risky potion", -60, player1);
-//        potionRepository.save(potion3);
-
-        NPC npc1 = new NPC("The Punisher", 200, 10, 200);
+        NPC npc1 = new NPC("The Punisher", 100, 10, 100);
         npcRepository.save(npc1);
 
         NPC npc2 = new NPC("The Orc of Tomorrow", 250, 11, 250);

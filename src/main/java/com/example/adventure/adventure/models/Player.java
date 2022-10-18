@@ -1,13 +1,10 @@
 package com.example.adventure.adventure.models;
-
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// name, healthPoints, inventory (dictionary array list), attack method, change weapon
+// name, healthPoints, startHealthPoints, weapon, redPotion, yellowPotion, greenPotion, bluePotion, gold
 @Entity
 @Table(name="players")
 public class Player {
@@ -35,20 +32,46 @@ public class Player {
     @JsonIgnoreProperties(value={"player"},allowSetters = true)
     private Weapon weapon;
 
-    @OneToMany(mappedBy="player", fetch=FetchType.LAZY)
-    @JsonIgnoreProperties(value={"player"}, allowSetters = true)
-    private List<Potion> potions;
+    @OneToOne
+    @JoinColumn(name="redpotion_id")
+    @JsonIgnoreProperties(value={"player"},allowSetters = true)
+    private RedPotion redPotion;
+
+    @OneToOne
+    @JoinColumn(name="yellowpotion_id")
+    @JsonIgnoreProperties(value={"player"},allowSetters = true)
+    private YellowPotion yellowPotion;
+
+    @OneToOne
+    @JoinColumn(name="bluepotion_id")
+    @JsonIgnoreProperties(value={"player"},allowSetters = true)
+    private BluePotion bluePotion;
+
+    @OneToOne
+    @JoinColumn(name="greenpotion_id")
+    @JsonIgnoreProperties(value={"player"},allowSetters = true)
+    private GreenPotion greenPotion;
 
 
-    public Player(int level, int gold, String name, int healthPoints, int startHealthPoints, Weapon weapon){
+    public Player(int level, int gold, String name, int healthPoints, int startHealthPoints, Weapon weapon, RedPotion redPotion, YellowPotion yellowPotion, BluePotion bluePotion, GreenPotion greenPotion){
         this.level = level;
         this.gold = gold;
         this.name = name;
         this.healthPoints = healthPoints;
-        this.potions = new ArrayList<Potion>();
         this.startHealthPoints = startHealthPoints;
         this.weapon = weapon;
+        this.redPotion = redPotion;
+        this.yellowPotion = yellowPotion;
+        this.greenPotion = greenPotion;
+        this.bluePotion = bluePotion;
     }
+
+    public GreenPotion getGreenPotion() {
+        return greenPotion;
+    }
+
+    public void setGreenPotion(GreenPotion greenPotion) {
+        this.greenPotion = greenPotion;
 
     public int getLevel() {
         return level;
@@ -58,12 +81,28 @@ public class Player {
         this.level = level;
     }
 
-    public List<Potion> getPotions() {
-        return potions;
+    public BluePotion getBluePotion() {
+        return bluePotion;
     }
 
-    public void setPotions(List<Potion> potions) {
-        this.potions = potions;
+    public void setBluePotion(BluePotion bluePotion) {
+        this.bluePotion = bluePotion;
+    }
+
+    public YellowPotion getYellowPotion() {
+        return yellowPotion;
+    }
+
+    public void setYellowPotion(YellowPotion yellowPotion) {
+        this.yellowPotion = yellowPotion;
+    }
+
+    public RedPotion getRedPotion() {
+        return redPotion;
+    }
+
+    public void setRedPotion(RedPotion redPotion) {
+        this.redPotion = redPotion;
     }
 
     public int getStartHealthPoints() {
@@ -80,14 +119,6 @@ public class Player {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public void removePotion(Potion potion){
-        potions.remove(potion);
-    }
-
-    public void addPotion(Potion potion){
-        potions.add(potion);
     }
 
     public int getGold() {
@@ -119,10 +150,10 @@ public class Player {
         this.healthPoints -= npc.getAttackValue();
     }
 
-    public void healPlayer(Potion potion) {
-
-        this.healthPoints += potion.getHealingPoints();
-    }
+//    public void healPlayer(Potion potion) {
+//
+//        this.healthPoints += potion.getHealingPoints();
+//    }
 
     public Weapon getWeapon() {
         return weapon;
@@ -138,7 +169,6 @@ public class Player {
 
     public Player(){
     }
-
 }
 
 

@@ -1,6 +1,5 @@
 package com.example.adventure.adventure.Controllers;
 
-import com.example.adventure.adventure.models.Potion;
 import com.example.adventure.adventure.models.Weapon;
 import com.example.adventure.adventure.repositories.WeaponRepository;
 import org.springframework.beans.factory.annotation.Autowired;

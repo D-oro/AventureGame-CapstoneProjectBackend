@@ -1,6 +1,5 @@
 package com.example.adventure.adventure.Controllers;
 
-import com.example.adventure.adventure.models.Potion;
 import com.example.adventure.adventure.models.Room;
 import com.example.adventure.adventure.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.Root;
 import java.util.List;
 
 @RestController
