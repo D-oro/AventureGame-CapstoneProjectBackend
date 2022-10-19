@@ -24,6 +24,8 @@ public class Room {
         this.npc = npc;
     }
 
+
+
     public NPC getNpc() {
         return npc;
     }

@@ -18,14 +18,13 @@ public class Weapon {
     @Column(name="name")
     private String name;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="player_id")
-
-    @JsonIgnoreProperties({"weapons"})
+    @JsonIgnoreProperties({"weapon"})
     private Player player;
 
 
-    public Weapon(int attackPoints, String name){
+    public Weapon(int attackPoints, String name) {
         this.attackPoints = attackPoints;
         this.name = name;
     }
@@ -64,5 +63,9 @@ public class Weapon {
 
     public Weapon(){
     }
+
+
+
+
 
 }

@@ -15,7 +15,7 @@ public class RoomTest {
 
     @BeforeEach
     public void before() {
-        npc = new NPC("The Projector", 60, 8);
+        npc = new NPC("The Projector", 60, 8, 100);
         room = new Room("Puzzle Room", npc);
     }
 
