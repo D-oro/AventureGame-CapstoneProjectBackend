@@ -71,16 +71,16 @@ public class DataLoader implements ApplicationRunner {
         Player player1 = new Player(1, 500, "Johnny", 75, 75, weapon1, redPotion, yellowPotion, bluePotion, greenPotion);
         playerRepository.save(player1);
 
-        NPC npc1 = new NPC("The Punisher", 100, 10, 100);
+        NPC npc1 = new NPC("The Punisher", 5, 10, 5);
         npcRepository.save(npc1);
 
-        NPC npc2 = new NPC("The Orc of Tomorrow", 250, 11, 250);
+        NPC npc2 = new NPC("The Orc of Tomorrow", 5, 11, 5);
         npcRepository.save(npc2);
 
-        NPC npc3 = new NPC("Trolling Me, Trolling You", 260, 12, 260);
+        NPC npc3 = new NPC("Trolling Me, Trolling You", 5, 12, 5);
         npcRepository.save(npc3);
 
-        NPC npc4 = new NPC("For chicken in chickens", 300, 13, 300);
+        NPC npc4 = new NPC("For chicken in chickens", 100, 13, 100);
         npcRepository.save(npc4);
 
         Room room1 = new Room("Battle room", npc1);
